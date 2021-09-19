@@ -1,0 +1,26 @@
+from Graph import *
+
+edges = []
+edges.append(Edge("q0", "q1", "0"))
+edges.append(Edge("q0", "q7", "1"))
+edges.append(Edge("q1", "q4", "0"))
+edges.append(Edge("q1", "q2", "1"))
+edges.append(Edge("q2", "q3", "0"))
+edges.append(Edge("q2", "q5", "1"))
+edges.append(Edge("q3", "q3", "0"))
+edges.append(Edge("q3", "q3", "1"))
+edges.append(Edge("q4", "q3", "0"))
+edges.append(Edge("q4", "q5", "1"))
+edges.append(Edge("q5", "q6", "0"))
+edges.append(Edge("q5", "q5", "1"))
+edges.append(Edge("q6", "q6", "0"))
+edges.append(Edge("q6", "q5", "1"))
+edges.append(Edge("q7", "q8", "0"))
+edges.append(Edge("q7", "q8", "1"))
+edges.append(Edge("q8", "q3", "0"))
+edges.append(Edge("q8", "q9", "1"))
+edges.append(Edge("q9", "q9", "0"))
+edges.append(Edge("q9", "q9", "1"))
+
+g = Graph(edges, start_state='q0', accepted_states=['q2', 'q3', 'q5'])
+g.test_all_binary(num_bits=5, padding=True, show_steps=False)
